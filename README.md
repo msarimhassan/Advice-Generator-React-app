@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I am using an advice api( https://api.adviceslip.com/advice ) for randomly generating advices !
 
 ## Available Scripts
 
