@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './advice.css';
+import './styles/advice.css';
 import Capture from './Capture.PNG';
 import '..//node_modules/bootstrap/dist/css/bootstrap.css';
 class App extends React.Component {
@@ -40,12 +40,16 @@ class App extends React.Component {
                     <h4 className='text-center'>{this.state.advice}</h4>
                 </div>
 
-                <img src={Capture} alt='baba g' className='pic' />
-                <div className='move'>
-                    <button className='btn btn-danger ' onClick={this.adviceGenerator}>
-                        {' '}
-                        Click me to get advice
-                    </button>
+                <div className='img-align'>
+                    <div className='align'>
+                        <img src={Capture} alt='baba g' className='pic' />
+                    </div>
+                    <div className='move'>
+                        <button className='btn btn-danger ' onClick={this.adviceGenerator}>
+                            {' '}
+                            Click me to get advice
+                        </button>
+                    </div>
                 </div>
             </div>
         );
