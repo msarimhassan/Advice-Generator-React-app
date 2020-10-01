@@ -13,25 +13,19 @@ class App extends React.Component {
 
     async componentDidMount() {
         try {
-            await axios
-                .get('https://api.adviceslip.com/advice')
-                .then(data => {
-                    console.log(data.data.slip.advice);
-                    this.setState({ advice: data.data.slip.advice });
-                })
-                .catch(err => console.log(err.data));
+            const { data } = await axios.get('https://api.adviceslip.com/advice');
+            const { slip } = data;
+            const { advice } = slip;
+            this.setState({ advice });
         } catch (error) {}
     }
 
     adviceGenerator = async () => {
         try {
-            await axios
-                .get('https://api.adviceslip.com/advice')
-                .then(data => {
-                    console.log(data.data.slip.advice);
-                    this.setState({ advice: data.data.slip.advice });
-                })
-                .catch(err => console.log(err.data));
+            const { data } = await axios.get('https://api.adviceslip.com/advice');
+            const { slip } = data;
+            const { advice } = slip;
+            this.setState({ advice });
         } catch (error) {}
     };
 
