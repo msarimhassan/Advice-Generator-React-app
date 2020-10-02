@@ -14,7 +14,7 @@ https://quizzical-perlman-0676d5.netlify.app/
 
 ## 🚀 FEATURES
 
-- Show you random advice 🐱‍🏍
+- Show you random advice 🐱‍🏍.
 - You can search as well ✨
 
 
