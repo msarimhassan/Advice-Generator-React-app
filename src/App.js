@@ -1,55 +1,59 @@
-import React  from 'react';
-import axios from "axios";
-import  "./advice.css";
+import React from 'react';
+import axios from 'axios';
+import './styles/advice.css';
 import Capture from './Capture.PNG';
-import "..//node_modules/bootstrap/dist/css/bootstrap.css";
-class app extends React.Component{
-
-  constructor() {
-    super();
-    this.state = {
-      advice : ""
+import '..//node_modules/bootstrap/dist/css/bootstrap.css';
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            advice: '',
+        };
     }
-  }
 
-  componentDidMount(){
-    axios.get("https://api.adviceslip.com/advice")
-    .then((data) =>{ console.log(data.data.slip.advice);
-      this.setState({advice : data.data.slip.advice })
-    })
-    .catch(err => console.log(err.data))
-    
-  }
+    async componentDidMount() {
+        try {
+            const { data } = await axios.get('https://api.adviceslip.com/advice');
+            const { slip } = data;
+            const { advice } = slip;
+            this.setState({ advice });
+        } catch (error) {}
+    }
 
-  adviceGenerator = () => {
-    axios.get("https://api.adviceslip.com/advice")
-    .then((data) =>{ console.log(data.data.slip.advice);
-      this.setState({advice : data.data.slip.advice })
-    })
-    .catch(err => console.log(err.data))
-    
-  }
+    adviceGenerator = async () => {
+        try {
+            const { data } = await axios.get('https://api.adviceslip.com/advice');
+            const { slip } = data;
+            const { advice } = slip;
+            this.setState({ advice });
+        } catch (error) {}
+    };
 
+    render() {
+        return (
+            <div className='big'>
+                <div className='container-fluid box1 text-center'>
+                    <h1>Advice Generator</h1>
+                </div>
 
-  render() {
-  return(
-    <div className="big"> 
-      <div className="container-fluid box1 text-center">
-        <h1 >Advice Generator</h1>
-      </div>
+                <div className='container text-center box2'>
+                    <h4 className='text-center'>{this.state.advice}</h4>
+                </div>
 
-   <div className="container text-center box2">
-    <h4 className="text-center">{this.state.advice}</h4>
-    </div>
-
-    <img src={Capture} alt="baba g" className="pic "/>
-    <div className="move">  
-  <button  className="btn btn-danger " onClick = { this.adviceGenerator } > Click me to get advice</button>
-  </div>
-  </div>
-  
-  );
-  }
+                <div className='img-align'>
+                    <div className='align'>
+                        <img src={Capture} alt='baba g' className='pic' />
+                    </div>
+                    <div className='move'>
+                        <button className='btn btn-danger ' onClick={this.adviceGenerator}>
+                            {' '}
+                            Click me to get advice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
-export default app;
+export default App;
