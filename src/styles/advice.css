@@ -5,6 +5,47 @@
 .big {
     background: linear-gradient(to bottom, #304352, #d7d2cc);
     height: 100vh;
+    max-height: 100vh;
+}
+
+.header{
+    background-color: black;
+    color: white;
+    padding: 15px 15px;
+}
+
+.button{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;  
+}
+.button-style{
+    padding: 10px 10px 10px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 5px #999;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    transition: color 1s;
+    transition: background-color 1s;
+}
+.button-style:hover{
+    background-color: white;
+    color: black;
+
+    border: none;
+}
+.button-style:active{
+    background-color: black;
+    color: white;
+    box-shadow: 0 5px gray;
+    transform: translateY(2px);
+    border: none;
 }
 .box1 {
     border: 0px solid black;
@@ -20,7 +61,7 @@
 }
 
 .box2 {
-    margin-top: 50px;
+    margin-top: 20px;
     width: 50%;
     border: 2px solid;
     background-color: rgba(50, 50, 50, 0.4);
@@ -37,29 +78,11 @@
 }
 
 .img-align {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .pic {
     height: 200px;
     border-radius: 20px;
-    margin-top: 50px;
-}
-
-.move {
-    margin-top: 70px;
-}
-@media only screen and (max-width: 600px) {
-    .move {
-        margin-top: 40px;
-        margin-left: 170px;
-    }
-    .pic {
-        height: 150px;
-        border-radius: 20px;
-        margin-top: 50px;
-        margin-left: 190px;
-    }
+    margin-top: 20px;
 }

@@ -32,25 +32,24 @@ class App extends React.Component {
     render() {
         return (
             <div className='big'>
-                <div className='container-fluid box1 text-center'>
+                <div class="header">
                     <h1>Advice Generator</h1>
                 </div>
 
                 <div className='container text-center box2'>
-                    <h4 className='text-center'>{this.state.advice}</h4>
+                    <h5 className='text-center'>{this.state.advice}</h5>
                 </div>
 
                 <div className='img-align'>
-                    <div className='align'>
+                   
                         <img src={Capture} alt='baba g' className='pic' />
-                    </div>
-                    <div className='move'>
-                        <button className='btn btn-danger ' onClick={this.adviceGenerator}>
+                </div>
+                <div className="button">
+                        <button className="button-style" onClick={this.adviceGenerator}>
                             {' '}
                             Click me to get advice
                         </button>
-                    </div>
-                </div>
+                 </div> 
             </div>
         );
     }
